@@ -3,6 +3,7 @@ services:
   fineractmysql:
     image: mariadb:10.11
     volumes:
+      - ./fineract-db/data:/var/lib/mysql
       - ./fineract-db/server_collation.cnf:/etc/mysql/conf.d/server_collation.cnf
       - ./fineract-db/docker:/docker-entrypoint-initdb.d:Z,ro
     restart: always
